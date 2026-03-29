@@ -1,484 +1,816 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buenos Aires 2026 • Namir & Juliana</title>
-  <meta name="description" content="Roteiro romântico e adulto para Buenos Aires, de 02 a 06 de abril de 2026." />
+  <title>Buenos Aires 2026 · Roteiro do Casal</title>
+  <meta name="description" content="Roteiro elegante e moderno para um casal em Buenos Aires, de 02 a 06 de abril de 2026." />
   <style>
-    :root{
-      --bg:#0f1115;
-      --card:#171a21;
-      --soft:#202532;
-      --text:#f4f5f7;
-      --muted:#c8cfda;
-      --accent:#d4a15d;
-      --accent-2:#8b5cf6;
-      --ok:#3ddc97;
-      --line:rgba(255,255,255,.08);
-      --shadow:0 18px 40px rgba(0,0,0,.28);
-      --radius:22px;
+    :root {
+      --bg: #0b1020;
+      --bg-2: #121a30;
+      --card: rgba(255,255,255,0.08);
+      --card-strong: rgba(255,255,255,0.12);
+      --text: #f5f7fb;
+      --muted: #c8d0e0;
+      --accent: #ff5f6d;
+      --accent-2: #ffc371;
+      --ok: #7ee7b2;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 24px;
+      --max: 1220px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(212,161,93,.18), transparent 26%),
-        radial-gradient(circle at top right, rgba(139,92,246,.14), transparent 24%),
-        linear-gradient(180deg, #0d1016 0%, #131722 100%);
-      line-height:1.55;
+        radial-gradient(circle at top left, rgba(255,95,109,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(255,195,113,.14), transparent 24%),
+        linear-gradient(180deg, #08101d 0%, #0c1222 40%, #131a2b 100%);
+      line-height: 1.55;
     }
-    .wrap{
-      width:min(1100px, calc(100% - 28px));
-      margin:0 auto;
-      padding:24px 0 50px;
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
     }
-    .hero{
-      position:relative;
-      overflow:hidden;
-      border:1px solid var(--line);
-      border-radius:30px;
-      box-shadow:var(--shadow);
-      padding:28px 22px;
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      padding: 28px 0 36px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
-        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
-        linear-gradient(180deg, rgba(212,161,93,.10), rgba(139,92,246,.06));
-      backdrop-filter: blur(10px);
+        linear-gradient(180deg, rgba(7,12,23,.28), rgba(7,12,23,.85)),
+        url('https://images.unsplash.com/photo-1589909202802-8f4aadce1849?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      filter: saturate(1.05);
+      transform: scale(1.03);
     }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:.84rem;
-      padding:8px 12px;
-      border:1px solid rgba(212,161,93,.35);
-      background:rgba(212,161,93,.10);
-      border-radius:999px;
-      color:#ffe5be;
-      margin-bottom:14px;
+
+    .topbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 44px;
     }
-    h1{
-      margin:0 0 10px;
-      font-size:clamp(2rem, 6vw, 3.7rem);
-      line-height:1.03;
-      letter-spacing:-.03em;
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(16px);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      letter-spacing: .2px;
     }
-    .sub{
-      font-size:1.03rem;
-      color:var(--muted);
-      max-width:860px;
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: end;
     }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:18px;
-      margin-top:22px;
+
+    .hero-copy {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(18px);
+      padding: 28px;
+      border-radius: 32px;
+      box-shadow: var(--shadow);
     }
-    .mini-card{
-      background:rgba(0,0,0,.18);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:16px;
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #fff;
+      font-size: 13px;
+      margin-bottom: 16px;
     }
-    .mini-card h3, .section h2{
-      margin:0 0 10px;
-      letter-spacing:-.02em;
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 5.8vw, 72px);
+      line-height: .98;
+      letter-spacing: -.03em;
     }
-    .facts{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:12px;
+
+    .hero p {
+      margin: 0;
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted);
+      max-width: 60ch;
     }
-    .fact{
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px;
-      background:rgba(255,255,255,.03);
+
+    .hero-actions {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    .fact .k{
-      color:var(--muted);
-      font-size:.87rem;
-      margin-bottom:6px;
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-weight: 700;
+      transition: .25s ease;
+      border: 1px solid transparent;
     }
-    .fact .v{
-      font-weight:700;
-      font-size:1rem;
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #141414;
+      box-shadow: 0 14px 34px rgba(255,95,109,.28);
     }
-    .section{
-      margin-top:22px;
-      background:rgba(20,24,33,.76);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
+
+    .btn-secondary {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border-color: rgba(255,255,255,.15);
+      backdrop-filter: blur(12px);
     }
-    .section-head{
-      padding:18px 18px 0;
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .quick-card {
+      background: rgba(7,12,23,.62);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(18px);
+      padding: 24px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
     }
-    .section-body{
-      padding:18px;
+
+    .quick-card h3 {
+      margin: 0 0 18px;
+      font-size: 20px;
     }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
+
+    .quick-grid {
+      display: grid;
+      gap: 14px;
     }
-    .day{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:18px;
+
+    .quick-item {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 14px 16px;
     }
-    .day .num{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:34px;height:34px;
-      border-radius:50%;
-      background:linear-gradient(135deg, var(--accent), #f0c78f);
-      color:#20160a;
-      font-weight:800;
-      margin-bottom:10px;
+
+    .quick-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+      color: #fff;
     }
-    .day h3{
-      margin:0 0 8px;
-      font-size:1.25rem;
-      letter-spacing:-.02em;
+
+    .quick-item span {
+      color: var(--muted);
+      font-size: 14px;
     }
-    .day .date{
-      color:#ffdca8;
-      font-size:.92rem;
-      margin-bottom:10px;
-      display:block;
+
+    section { padding: 42px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
     }
-    .list{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -.03em;
     }
-    .list li{margin:6px 0}
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:8px;
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 60ch;
     }
-    .pill{
-      padding:9px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      color:#f2e6d2;
-      font-size:.92rem;
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
     }
-    .columns-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.09);
+      color: #e6ecf8;
+      font-size: 14px;
     }
-    .tip, .place{
-      background:rgba(255,255,255,.03);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:16px;
+
+    .trip-overview {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 14px;
     }
-    .tip h4, .place h4{
-      margin:0 0 8px;
-      font-size:1rem;
+
+    .overview-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 20px;
+      border-radius: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
     }
-    .muted{color:var(--muted)}
-    .small{font-size:.93rem}
-    .adult{
-      border-left:4px solid var(--accent-2);
-      padding-left:14px;
-      margin-top:10px;
-      color:var(--muted);
+
+    .overview-card .k {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
     }
-    .footer{
-      text-align:center;
-      color:var(--muted);
-      font-size:.9rem;
-      padding:26px 10px 12px;
+
+    .overview-card .v {
+      font-size: 20px;
+      font-weight: 800;
     }
-    .cta{
-      margin-top:16px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+
+    .days {
+      display: grid;
+      gap: 26px;
+      margin-top: 10px;
     }
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      color:#18130b;
-      font-weight:700;
-      background:linear-gradient(135deg, var(--accent), #f3c68a);
-      padding:12px 16px;
-      border-radius:999px;
+
+    .day-card {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 0;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 30px;
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
     }
-    .btn.secondary{
-      color:var(--text);
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
+
+    .day-media {
+      min-height: 350px;
+      position: relative;
     }
-    .quote{
-      font-style:italic;
-      color:#ffedcd;
-      font-size:1.02rem;
-      margin-top:14px;
+
+    .day-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    @media (max-width: 900px){
-      .hero-grid,.grid,.columns-3{grid-template-columns:1fr}
-      .facts{grid-template-columns:1fr 1fr}
+
+    .day-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(7,12,23,.72);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+      font-size: 13px;
+      font-weight: 700;
     }
-    @media (max-width: 560px){
-      .wrap{width:min(100% - 18px, 1100px)}
-      .hero{padding:22px 16px}
-      .section-body,.section-head{padding:16px}
-      .facts{grid-template-columns:1fr}
-      h1{font-size:2.2rem}
-      .sub{font-size:.98rem}
+
+    .day-content {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: center;
+    }
+
+    .day-content h3 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.05;
+    }
+
+    .day-content p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .slot {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 14px;
+      padding: 14px;
+      background: rgba(255,255,255,.05);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .slot-time {
+      font-size: 13px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      font-weight: 800;
+    }
+
+    .slot strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    .slot span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tips-grid, .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tip-card, .food-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 22px;
+      border-radius: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .tip-card h4, .food-card h4 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .tip-card p, .food-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      grid-template-rows: 250px 250px;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .gallery figure {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery figure figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 14px 16px;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.75));
+      font-weight: 700;
+    }
+
+    .gallery .big { grid-row: 1 / 3; }
+
+    .final-card {
+      background:
+        linear-gradient(135deg, rgba(255,95,109,.16), rgba(255,195,113,.12)),
+        rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 32px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .footer {
+      padding: 28px 0 48px;
+      color: #b9c3d8;
+      font-size: 14px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #b9c3d8;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-content,
+      .day-card,
+      .trip-overview,
+      .tips-grid,
+      .food-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      .gallery { grid-template-rows: none; }
+      .gallery .big { grid-row: auto; }
+    }
+
+    @media (max-width: 720px) {
+      .hero { min-height: auto; padding-top: 18px; }
+      .hero-copy, .quick-card { padding: 20px; }
+      .day-content { padding: 20px; }
+      .slot { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+      .topbar { margin-bottom: 20px; }
+      .brand { font-size: 14px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <section class="hero">
-      <div class="badge">🇦🇷 Viagem a dois • 02 a 06 de abril de 2026</div>
-      <h1>Buenos Aires para Namir & Juliana</h1>
-      <p class="sub">
-        Um roteiro pensado para vocês dois: clima de casal, experiências novas, vinho, massas, carnes, rock internacional,
-        barzinhos, museus, uma noite mais adulta opcional e compras com foco em custo-benefício.
-      </p>
+  <header class="hero" id="topo">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">🇦🇷 Buenos Aires 2026 · Roteiro do Casal</div>
+      </div>
 
-      <div class="hero-grid">
-        <div class="mini-card">
-          <h3>Resumo da viagem</h3>
-          <div class="facts">
-            <div class="fact">
-              <div class="k">Voos</div>
-              <div class="v">GIG ⇄ AEP</div>
-            </div>
-            <div class="fact">
-              <div class="k">Hotel</div>
-              <div class="v">248 Finisterra • Palermo</div>
-            </div>
-            <div class="fact">
-              <div class="k">Estilo</div>
-              <div class="v">Romântico, adulto e econômico</div>
-            </div>
-            <div class="fact">
-              <div class="k">Destaques</div>
-              <div class="v">Rock, vinho, carne, couro e noite</div>
-            </div>
-          </div>
-          <p class="quote">“A ideia aqui não é repetir Buenos Aires de 10 anos atrás — é viver uma versão mais nossa.”</p>
-        </div>
-
-        <div class="mini-card">
-          <h3>Base logística</h3>
-          <ul class="list">
-            <li><strong>Chegada:</strong> 02/04 às 08:00 em Aeroparque.</li>
-            <li><strong>Transfer inicial:</strong> Estación Lisandro de la Torre.</li>
-            <li><strong>Hospedagem:</strong> Palermo, ótimo para sair a pé e gastar menos com deslocamento.</li>
-            <li><strong>Volta:</strong> 06/04 pela manhã.</li>
-          </ul>
-          <div class="cta">
-            <a class="btn" href="#roteiro">Ver roteiro</a>
-            <a class="btn secondary" href="#adulto">Noite adulta opcional</a>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <div class="eyebrow">02 a 06 de abril · Palermo · casal · rock · vinho · experiências</div>
+          <h1>Uma Buenos Aires mais adulta, charmosa e com a cara de vocês.</h1>
+          <p>
+            Um roteiro pensado para equilibrar gastronomia, caminhadas gostosas, cultura, noite, clima de casal,
+            pitadas de ousadia e compras inteligentes — tudo sem transformar a viagem em maratona.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#roteiro">Ver roteiro</a>
+            <a class="btn btn-secondary" href="#compras">Jaqueta de couro</a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section" id="roteiro">
-      <div class="section-head">
-        <h2>Roteiro dia a dia</h2>
-      </div>
-      <div class="section-body">
-        <div class="grid">
-          <article class="day">
-            <div class="num">1</div>
-            <h3>Chegada + Palermo Root</h3>
-            <span class="date">02/04 • Quinta</span>
-            <ul class="list">
-              <li>Chegada, deslocamento e acomodação no hotel.</li>
-              <li>Almoço leve e sem estourar orçamento.</li>
-              <li>Passeio por <strong>Palermo Soho</strong>, Plaza Serrano, lojinhas e street art.</li>
-              <li>Noite com pub ou bar de vibe rock para entrar no clima da viagem.</li>
-            </ul>
-            <div class="pill-row">
-              <span class="pill">Palermo Soho</span>
-              <span class="pill">Plaza Serrano</span>
-              <span class="pill">Bar com rock</span>
+        <aside class="quick-card">
+          <h3>Resumo rápido da viagem</h3>
+          <div class="quick-grid">
+            <div class="quick-item">
+              <strong>Hospedagem</strong>
+              <span>248 Finisterra · Palermo</span>
             </div>
-          </article>
-
-          <article class="day">
-            <div class="num">2</div>
-            <h3>Centro + San Telmo + vinho & carne</h3>
-            <span class="date">03/04 • Sexta</span>
-            <ul class="list">
-              <li>Manhã pela <strong>Plaza de Mayo</strong> e arredores da Casa Rosada.</li>
-              <li>Tarde em <strong>San Telmo</strong>, com clima histórico, antiguidades e ruas charmosas.</li>
-              <li>Jantar de parrilla com bom custo-benefício.</li>
-              <li>Fechar a noite com drinks e caminhada em Puerto Madero.</li>
-            </ul>
-            <div class="pill-row">
-              <span class="pill">Plaza de Mayo</span>
-              <span class="pill">San Telmo</span>
-              <span class="pill">Parrilla + vinho</span>
+            <div class="quick-item">
+              <strong>Estilo ideal</strong>
+              <span>Roteiro elegante, sem correria e com boas noites</span>
             </div>
-          </article>
-
-          <article class="day">
-            <div class="num">3</div>
-            <h3>Recoleta + doce + noite diferente</h3>
-            <span class="date">04/04 • Sábado</span>
-            <ul class="list">
-              <li>Manhã mais relax em <strong>Recoleta</strong>.</li>
-              <li>Visita ao <strong>Cemitério da Recoleta</strong> e pausa para café/doce argentino.</li>
-              <li>Noite com duas possibilidades: bar + balada em Palermo ou programação adulta discreta para casal.</li>
-            </ul>
-            <div class="pill-row">
-              <span class="pill">Recoleta</span>
-              <span class="pill">Café & doce</span>
-              <span class="pill">Noite adulta opcional</span>
+            <div class="quick-item">
+              <strong>Vibe do casal</strong>
+              <span>Rock 80/90/2000, vinho, massas, carnes e experiências novas</span>
             </div>
-          </article>
-
-          <article class="day">
-            <div class="num">4</div>
-            <h3>Couro, cultura e jantar romântico</h3>
-            <span class="date">05/04 • Domingo</span>
-            <ul class="list">
-              <li>Manhã na <strong>Calle Murillo</strong> procurando jaqueta de couro para moto.</li>
-              <li>Dica: negociar sempre e perguntar preço em dinheiro.</li>
-              <li>Tarde no <strong>El Ateneo Grand Splendid</strong> e clima de cinema/livraria.</li>
-              <li>Jantar romântico com vinho, priorizando uma parrilla que caiba no orçamento.</li>
-            </ul>
-            <div class="pill-row">
-              <span class="pill">Calle Murillo</span>
-              <span class="pill">Jaqueta de couro</span>
-              <span class="pill">El Ateneo</span>
+            <div class="quick-item">
+              <strong>Ponto estratégico</strong>
+              <span>Palermo como base para barzinhos, restaurantes e vida noturna</span>
             </div>
-          </article>
-
-          <article class="day" style="grid-column:1/-1;">
-            <div class="num">5</div>
-            <h3>Despedida</h3>
-            <span class="date">06/04 • Segunda</span>
-            <ul class="list">
-              <li>Café tranquilo perto do hotel.</li>
-              <li>Última caminhada rápida pelo bairro.</li>
-              <li>Saída para o aeroporto com folga.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>Restaurantes e experiências que combinam com vocês</h2>
-      </div>
-      <div class="section-body">
-        <div class="columns-3">
-          <div class="place">
-            <h4>🍷 Vinho + carne</h4>
-            <p class="muted small">La Brigada entra bem no roteiro de San Telmo. Em Palermo, vale escolher uma boa parrilla local antes de tentar algo mais caro como Don Julio.</p>
           </div>
-          <div class="place">
-            <h4>🎸 Rock + barzinhos</h4>
-            <p class="muted small">Palermo concentra bares e pubs com clima mais descolado. Ideal para vocês curtirem uma noite 80/90/2000 sem depender de grandes deslocamentos.</p>
-          </div>
-          <div class="place">
-            <h4>🏍️ Couro com melhor chance de preço</h4>
-            <p class="muted small">A Calle Murillo é a melhor aposta para jaqueta de couro com variedade. O segredo é comparar, vestir com calma e negociar.</p>
-          </div>
-        </div>
+        </aside>
       </div>
-    </section>
-
-    <section class="section" id="adulto">
-      <div class="section-head">
-        <h2>Noite adulta opcional</h2>
-      </div>
-      <div class="section-body">
-        <p class="muted">
-          Como vocês curtem uma programação mais adulta, a melhor estratégia não é começar direto no lugar mais intenso,
-          e sim construir a noite com clima, conversa e liberdade.
-        </p>
-        <div class="columns-3">
-          <div class="tip">
-            <h4>💎 Sweet Club</h4>
-            <p class="muted small">Boa escolha para casal que quer algo mais organizado, discreto e com ambiente menos vulgar.</p>
-          </div>
-          <div class="tip">
-            <h4>🔥 Bash Club</h4>
-            <p class="muted small">Mistura de balada com vibe mais liberal. Boa porta de entrada para sentir o clima antes de decidir.</p>
-          </div>
-          <div class="tip">
-            <h4>😈 Club 69 / alternativa</h4>
-            <p class="muted small">Não é swing puro, mas pode funcionar como noite divertida, sexy e sem pressão.</p>
-          </div>
-        </div>
-        <div class="adult">
-          <strong>Sugestão para vocês:</strong> jantar com vinho, começar em um bar de Palermo e decidir juntos no momento se seguem para algo mais direto.
-          Sem obrigação, sem pressão e com foco na experiência do casal.
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>Dicas para economizar sem perder a viagem</h2>
-      </div>
-      <div class="section-body">
-        <div class="columns-3">
-          <div class="tip">
-            <h4>💵 Câmbio</h4>
-            <p class="muted small">Levar estratégia de câmbio ajuda muito. Em geral, dinheiro costuma render melhor do que cair em armadilhas turísticas.</p>
-          </div>
-          <div class="tip">
-            <h4>🚕 Deslocamento</h4>
-            <p class="muted small">Uber e caminhadas em Palermo resolvem bastante. Evitem corridas desnecessárias entre bairros à noite.</p>
-          </div>
-          <div class="tip">
-            <h4>🍽️ Alimentação</h4>
-            <p class="muted small">Nem todo jantar precisa ser premium. Equilibrar empanadas, milanesa e uma boa parrilla faz o orçamento respirar.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>Essência do roteiro</h2>
-      </div>
-      <div class="section-body">
-        <p class="muted">
-          O foco dessa viagem é viver Buenos Aires como casal: revisitar a cidade com outro olhar, misturando romance, liberdade,
-          gastronomia, rock, pequenos luxos e escolhas inteligentes para o bolso.
-        </p>
-        <div class="pill-row">
-          <span class="pill">Casal</span>
-          <span class="pill">Romântico</span>
-          <span class="pill">Adulto</span>
-          <span class="pill">Econômico</span>
-          <span class="pill">Rock 80/90/2000</span>
-          <span class="pill">Vinho & carne</span>
-          <span class="pill">Novas experiências</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">
-      Feito com carinho para compartilhar com a Juliana no WhatsApp 💛
     </div>
-  </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>O espírito da viagem</h2>
+            <p>
+              Vocês já conheceram Buenos Aires no passado. Desta vez, a ideia é viver a cidade com mais identidade,
+              maturidade e prazer: boa mesa, ruas charmosas, compras inteligentes, noites memoráveis e espaço para o improviso.
+            </p>
+          </div>
+        </div>
+
+        <div class="chips">
+          <div class="chip">💕 Casal há 2+ anos</div>
+          <div class="chip">🎸 Rock internacional</div>
+          <div class="chip">🍷 Vinhos e bares</div>
+          <div class="chip">🥩 Carnes e massas</div>
+          <div class="chip">🖼️ Museus e cultura</div>
+          <div class="chip">🔥 Programação adulta discreta</div>
+          <div class="chip">🏍️ Jaqueta de couro para moto</div>
+          <div class="chip">💸 Orçamento apertado</div>
+        </div>
+
+        <div class="trip-overview">
+          <div class="overview-card">
+            <div class="k">Chegada</div>
+            <div class="v">02/04 · cedo</div>
+          </div>
+          <div class="overview-card">
+            <div class="k">Saída</div>
+            <div class="v">06/04 · manhã</div>
+          </div>
+          <div class="overview-card">
+            <div class="k">Base</div>
+            <div class="v">Palermo</div>
+          </div>
+          <div class="overview-card">
+            <div class="k">Estratégia</div>
+            <div class="v">Aproveitar muito gastando melhor</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roteiro">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Roteiro dia a dia</h2>
+            <p>
+              Sequência pensada para encaixar energia, deslocamentos, gastronomia, descanso e vida noturna sem pesar no bolso nem no corpo.
+            </p>
+          </div>
+        </div>
+
+        <div class="days">
+          <article class="day-card">
+            <div class="day-media">
+              <img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1400&q=80" alt="Palermo em Buenos Aires" />
+              <div class="day-badge">Dia 1 · 02/04</div>
+            </div>
+            <div class="day-content">
+              <h3>Chegada suave + Palermo Soho + noite com rock</h3>
+              <p>
+                Como vocês chegam cedo, a melhor jogada é entrar no ritmo da cidade sem exaustão. Palermo é o bairro ideal para começar bonito.
+              </p>
+              <div class="timeline">
+                <div class="slot">
+                  <div class="slot-time">Manhã</div>
+                  <div><strong>Chegada, transfer e check-in</strong><span>Deixar as malas, tomar um café tranquilo e evitar grandes deslocamentos logo no primeiro dia.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Tarde</div>
+                  <div><strong>Palermo Soho + Plaza Serrano</strong><span>Caminhar sem pressa, ver lojas, grafites, cafés e entrar no clima de viagem a dois.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Noite</div>
+                  <div><strong>The Roxy Live ou pub com rock</strong><span>Noite com energia, repertório que conversa com o gosto de vocês e cara de início de viagem.</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-media">
+              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=80" alt="San Telmo em Buenos Aires" />
+              <div class="day-badge">Dia 2 · 03/04</div>
+            </div>
+            <div class="day-content">
+              <h3>Centro histórico + San Telmo + carne e vinho</h3>
+              <p>
+                O segundo dia traz a Buenos Aires clássica, mas com pegada mais autêntica. Bom para sentir cidade, história e mesa farta.
+              </p>
+              <div class="timeline">
+                <div class="slot">
+                  <div class="slot-time">Manhã</div>
+                  <div><strong>Casa Rosada + Plaza de Mayo</strong><span>Um bloco mais clássico para revisitar a cidade com outro olhar, agora em casal.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Tarde</div>
+                  <div><strong>San Telmo</strong><span>Ruas antigas, atmosfera mais boêmia, lojinhas, antiguidades e aquela sensação de cidade vivida.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Noite</div>
+                  <div><strong>Jantar na La Brigada + caminhada em Puerto Madero</strong><span>Um dos melhores encaixes para vocês: carne, vinho e depois uma volta charmosa para fechar.</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-media">
+              <img src="https://images.unsplash.com/photo-1586878945160-d5fbb7be7df3?auto=format&fit=crop&w=1400&q=80" alt="Recoleta em Buenos Aires" />
+              <div class="day-badge">Dia 3 · 04/04</div>
+            </div>
+            <div class="day-content">
+              <h3>Recoleta + pausa elegante + noite adulta</h3>
+              <p>
+                Dia de equilíbrio: passeio sofisticado, café com charme e energia guardada para uma noite mais sensual, livre e madura.
+              </p>
+              <div class="timeline">
+                <div class="slot">
+                  <div class="slot-time">Manhã</div>
+                  <div><strong>Recoleta + Cemitério da Recoleta</strong><span>Arquitetura, atmosfera culta e um passeio que rende conversa, fotos e memória.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Tarde</div>
+                  <div><strong>Café, doce argentino e descanso</strong><span>Baixar o ritmo para deixar a noite mais interessante e menos corrida.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Noite</div>
+                  <div><strong>Vinho em Palermo + Bash Club ou Sweet Club</strong><span>Mais leve e progressivo no Bash; mais direto e focado em casais no Sweet. Chegar depois de meia-noite.</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card" id="compras">
+            <div class="day-media">
+              <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=1400&q=80" alt="Compras e couro em Buenos Aires" />
+              <div class="day-badge">Dia 4 · 05/04</div>
+            </div>
+            <div class="day-content">
+              <h3>Calle Murillo + couro para moto + jantar romântico</h3>
+              <p>
+                Um dia com a sua cara: compras assertivas, foco em couro de boa qualidade e fechamento bonito para o casal.
+              </p>
+              <div class="timeline">
+                <div class="slot">
+                  <div class="slot-time">Manhã</div>
+                  <div><strong>Calle Murillo</strong><span>Principal aposta para procurar jaqueta de couro com melhor relação entre preço, qualidade e variedade.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Tarde</div>
+                  <div><strong>El Ateneo Grand Splendid</strong><span>Parada linda, sofisticada e perfeita para respiro, fotos e um momento de casal.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Noite</div>
+                  <div><strong>Jantar especial em Palermo</strong><span>Se quiserem investir mais, Don Julio. Se quiserem economizar, escolham uma parrilla local bem avaliada no bairro.</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-media">
+              <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1400&q=80" alt="Aeroporto e despedida de Buenos Aires" />
+              <div class="day-badge">Dia 5 · 06/04</div>
+            </div>
+            <div class="day-content">
+              <h3>Despedida sem pressa</h3>
+              <p>
+                Último café, última caminhada curta e retorno. Melhor sair com uma sensação boa do que forçar mais um roteiro na marra.
+              </p>
+              <div class="timeline">
+                <div class="slot">
+                  <div class="slot-time">Manhã</div>
+                  <div><strong>Café final em Palermo</strong><span>Fechar a viagem em clima leve e gostoso, sem estresse nem correria desnecessária.</span></div>
+                </div>
+                <div class="slot">
+                  <div class="slot-time">Saída</div>
+                  <div><strong>Transfer + aeroporto</strong><span>Volta com a sensação de ter vivido uma Buenos Aires mais adulta, mais bonita e mais de vocês.</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Sabores, clima e experiências</h2>
+            <p>
+              O segredo aqui é equilibrar alguns momentos especiais com escolhas inteligentes ao longo da viagem.
+            </p>
+          </div>
+        </div>
+
+        <div class="food-grid">
+          <div class="food-card">
+            <h4>Massas e comfort food</h4>
+            <p>Intercalem parrilla com massas e pratos locais para variar o ritmo e não pesar no orçamento nem no paladar.</p>
+          </div>
+          <div class="food-card">
+            <h4>Vinho argentino</h4>
+            <p>Boa parte da experiência de vocês passa por uma taça bem escolhida. Em muitos lugares isso entrega muito por pouco.</p>
+          </div>
+          <div class="food-card">
+            <h4>Noite com personalidade</h4>
+            <p>Palermo funciona muito bem para barzinhos, pubs, baladas e um início de noite que pode evoluir naturalmente.</p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="big">
+            <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1400&q=80" alt="Puerto Madero à noite" />
+            <figcaption>Puerto Madero para uma caminhada noturna</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Restaurante com vinho" />
+            <figcaption>Jantares com clima íntimo</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" alt="Bar com drinks" />
+            <figcaption>Barzinhos e drinks em Palermo</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Carne e gastronomia" />
+            <figcaption>Parrilla como ponto alto da viagem</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1200&q=80" alt="Livraria El Ateneo" />
+            <figcaption>El Ateneo para um respiro sofisticado</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Como economizar sem estragar a viagem</h2>
+            <p>
+              O objetivo não é gastar pouco a qualquer custo. É gastar melhor, preservando os momentos que realmente vão marcar a experiência.
+            </p>
+          </div>
+        </div>
+
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h4>1. Invistam nas noites certas</h4>
+            <p>Escolham 1 ou 2 jantares/experiências mais especiais e mantenham o restante mais leve. Isso traz equilíbrio real ao orçamento.</p>
+          </div>
+          <div class="tip-card">
+            <h4>2. Palermo já resolve muito</h4>
+            <p>Ficar bem em Palermo reduz deslocamentos, facilita improvisos e economiza tempo e dinheiro com transporte.</p>
+          </div>
+          <div class="tip-card">
+            <h4>3. Negociem no couro</h4>
+            <p>Na Calle Murillo, comparar lojas e pechinchar faz diferença. Pagamento em dinheiro costuma ajudar ainda mais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="final-card">
+          <div class="section-head">
+            <div>
+              <h2>Resumo final</h2>
+              <p>
+                Esta viagem tem tudo para ser menos “turismo padrão” e mais experiência com identidade: boa música, boa mesa, cidade viva, desejo, cumplicidade e um ritmo que respeita vocês dois.
+              </p>
+            </div>
+          </div>
+          <div class="chips">
+            <div class="chip">Palermo como base</div>
+            <div class="chip">San Telmo com alma</div>
+            <div class="chip">Recoleta com elegância</div>
+            <div class="chip">Calle Murillo para couro</div>
+            <div class="chip">Noites com liberdade</div>
+            <div class="chip">Buenos Aires com personalidade</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>Feito para compartilhar no WhatsApp 💬</div>
+      <div class="small">Dica: ao abrir no celular, use “Compartilhar” ou “Abrir no navegador” para melhor visualização.</div>
+    </div>
+  </footer>
 </body>
 </html>
